@@ -498,32 +498,41 @@ footer {
     transform: translateY(-2px);
 }
 
-/* --- Responsive --- */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        display: none; /* Simplification pour mobile */
-    }
-    
-    .hero-content {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-    
-    .hero-text {
-        padding-right: 0;
-        margin-top: 30px;
-    }
-    
-    .hero h1 { font-size: 2.2rem; }
-    
-    .timeline::after { left: 20px; }
-    .timeline-item::after { left: 13px; }
-    
-    .image-placeholder {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .image-placeholder i { font-size: 4rem; }
+/* --- RESPONSIVE MOBILE (À ajouter à la fin du fichier style.css) --- */
 
+@media screen and (max-width: 768px) {
+    
+    /* 1. On réduit les marges intérieures de la carte pour gagner de l'espace */
+    .about-card {
+        padding: 20px 15px; /* Moins de vide sur les côtés */
+    }
+
+    /* 2. On ajuste la taille du titre et de l'icône */
+    .about-card h4 {
+        font-size: 1.25rem; /* Un peu plus petit */
+    }
+    
+    .about-card .icon-wrapper {
+        width: 60px;
+        height: 60px; /* Icône un peu plus petite */
+    }
+
+    /* 3. Transformation des boutons pour le tactile */
+    .certif-container {
+        gap: 8px; /* Espace réduit entre les boutons */
+        width: 100%; /* S'assure que le conteneur prend toute la largeur */
+    }
+
+    .certif-tag {
+        /* "flex: 1" force les boutons à s'étirer pour remplir la ligne.
+           C'est plus joli et plus facile à cliquer sur mobile. */
+        flex: 1 1 auto; 
+        
+        justify-content: center; /* Centre le texte dans le bouton étiré */
+        padding: 10px 12px; /* Zones de clic plus hautes pour les doigts */
+        font-size: 0.85rem; /* Texte lisible */
+        text-align: center;
+        width: 100%; /* Si l'écran est très petit, le bouton prendra toute la ligne */
+    }
 }
+
