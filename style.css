@@ -210,36 +210,99 @@ ul {
     margin-bottom: 50px;
 }
 
-/* --- About Cards --- */
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
+/* --- Style de la carte Logistique --- */
 .about-card {
-    background: var(--white);
-    padding: 30px;
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); /* Ombre douce */
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-    border-bottom: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--accent-color); /* Rappel de l'orange BTP */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; /* S'assure que toutes les cartes ont la même hauteur */
 }
 
 .about-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Légère montée au survol */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-.about-card i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
+/* --- Icône principale --- */
+.about-card .icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background-color: #f4f7f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
+.about-card i.fa-warehouse {
+    font-size: 2rem;
+    color: var(--primary-color); /* Bleu */
+}
+
+/* --- Textes --- */
 .about-card h4 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
     margin-bottom: 15px;
-    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.about-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* --- Conteneur des badges --- */
+.certif-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Espace entre les boutons */
+    margin-top: auto; /* Pousse les boutons vers le bas si la carte est grande */
+    width: 100%;
+}
+
+/* --- Style des boutons "Tags" --- */
+.certif-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; /* Espace entre l'icône et le texte */
+    background-color: #f8f9fa;
+    color: var(--text-dark);
+    padding: 8px 14px;
+    border-radius: 50px; /* Forme pilule */
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #e1e1e1;
+    transition: all 0.2s ease;
+}
+
+.certif-tag i {
+    color: var(--accent-color); /* Icône PDF en orange */
+    font-size: 0.9rem;
+}
+
+/* --- Effet au survol des boutons --- */
+.certif-tag:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    transform: scale(1.05); /* Léger grossissement */
+}
+
+.certif-tag:hover i {
+    color: #ffffff; /* L'icône devient blanche au survol */
 }
 
 /* --- Competences --- */
@@ -462,4 +525,5 @@ footer {
     }
     
     .image-placeholder i { font-size: 4rem; }
+
 }
